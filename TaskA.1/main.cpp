@@ -342,4 +342,13 @@ int main() {
             cout << "Caught UnknownPackageError: " << e.what() << endl;
         } catch (const BillingError& e) {
             cout << "Caught BillingError: " << e.what() << endl;
-        } catch (const HospitalError&
+        } catch (const HospitalError& e) {
+            cout << "Caught HospitalError: " << e.what() << endl;
+        } catch (...) {
+            cout << "Caught unexpected error safely." << endl;
+        }
+    }
+
+    cout << "\nProgram completed safely without crashes or memory leaks." << endl;
+    return 0;
+}
